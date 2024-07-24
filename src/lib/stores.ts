@@ -1,0 +1,20 @@
+import { writable, type Writable } from "svelte/store";
+import type { CategoryObj, OrderProductObj } from "./containers";
+import type { Dropdown, Toast } from "bootstrap";
+
+export const product_image_bucket: string = "https://ocplvcryfchlqsqfuciu.supabase.co/storage/v1/object/public/products-image/";
+export const login_store: Writable<number> = writable(0);
+export const categories_store: Writable<Map<number, CategoryObj>> = writable(new Map());
+export const products_store: Writable<number []> = writable([]);
+export const pending_orders: Writable<number[]> = writable([]);
+export const complete_orders: Writable<number[]> = writable([]);
+export const cancelled_orders: Writable<number[]> = writable([]);
+export const order_products_store: Writable<OrderProductObj[]> = writable([]);
+export const add_photo_toast_store: Writable<Toast | null> = writable(null);
+export const selected_category_toast_store: Writable<Toast | null> = writable(null);
+export const product_unavailable_toast_store: Writable<Toast | null> = writable(null);
+export const logged_out_toast_store: Writable<Toast | null> = writable(null);
+export const other_error_toast_store: Writable<Toast | null> = writable(null);
+export const selected_category: Writable<number> = writable(0);
+export const category_drop_store: Writable<Dropdown | null> = writable(null);
+export const category_chain: Writable<string[]> = writable([]);
